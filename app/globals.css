@@ -1,56 +1,99 @@
-/* src/css/cv.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #aec21b;
+  --sidebar-bg: #0f172a;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+}
+
+/* Khung bao ngoài cùng */
 .cv-container {
   display: flex;
   min-height: 100vh;
-  background-color: #f1f5f9;
-  font-family: 'Inter', sans-serif;
 }
 
+/* Điều chỉnh Sidebar hiện đại */
 .sidebar {
-  width: 260px;
-  background-color: #0f172a;
-  color: white;
-  padding: 30px 20px;
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  color: #f8fafc;
+  padding: 40px 24px;
   position: fixed;
-  height: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 10;
 }
 
+/* Nội dung chính nằm trong Container */
 .main-content {
-  margin-left: 260px;
+  margin-left: 280px;
   flex: 1;
   padding: 40px;
+  display: flex;
+  justify-content: center; /* Đưa nội dung vào giữa */
 }
 
+/* Container giới hạn độ rộng để không bị thô */
+.content-wrapper {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Card hiện đại */
 .cv-card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cv-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .section-title {
+  font-size: 20px;
+  font-weight: 700;
   color: #1e293b;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 10px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Project Item tinh tế hơn */
 .project-item {
-  border-left: 4px solid #10b981;
-  padding-left: 15px;
-  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fdfdfd;
+  border: 1px solid #f1f5f9;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
 }
 
 .skill-tag {
   display: inline-block;
-  background: #e2e8f0;
-  padding: 5px 12px;
-  border-radius: 15px;
-  margin: 5px;
-  font-size: 13px;
+  background: #f1f5f9;
   color: #475569;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 4px;
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  background: var(--primary);
+  color: white;
 }
